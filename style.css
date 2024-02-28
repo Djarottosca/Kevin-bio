@@ -1,28 +1,103 @@
-#text-header:hover{
-    color: brown;
-    cursor: pointer;
+#text-header:hover {
+  color: brown;
+  cursor: pointer;
+}
+
+#username {
+  font-weight: 600;
+}
+#job {
+  font-size: 20px;
 }
 
 body {
-    font-family: Adilson Gonzales de Oliveira Junior, menlo;
-    margin: 0;
-    padding: 0;
-    background-image: url('/images/famy-ava.jpeg');
-    height: 500px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;  
-    background-size: cover;
+  font-family: Helvetica;
+  margin: 0;
+  padding: 0;
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
-  
+body.home {
+  background-image: url("/images/famy-ava.jpeg");
+}
+body.contact {
+  background-color: azure;
+}
+body.about {
+  background-color: azure;
+}
+
+table {
+  background-color: transparent;
+
+  td {
+    border-bottom: 1px solid gray;
+    border-top: 1px solid gray;
+  }
+  /* coba tambahkan event hover atau active untuk tag dalam table */
+  /*
+  -
+  -
+  */
+}
+
 .img {
-    width: 100px;
-    border-radius: 50px;
-    float: left;
-    margin-right: 10px;
+  width: 100px;
+  border-radius: 50px;
+  float: left;
+  margin-right: 10px;
+}
+
+p.username {
+  font-weight: bold;
+}
+
+.header-wrapper {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.links-wrapper {
+  background-color: bisque;
+  padding: 5px 0px;
+
+  a {
+    color: black;
+    text-decoration: none;
+    font-weight: 400px;
+    font-family: monospace;
   }
-  
-  p.username {
-    font-weight: bold;
+  a:hover {
+    text-decoration: underline;
   }
-  
+}
+
+.nav-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  background-color: transparent;
+  gap: 10px;
+  padding: 0px 50px;
+  margin-top: 5px;
+  a {
+    color: white;
+    text-decoration: none;
+    opacity: 80%;
+  }
+  a:hover {
+    opacity: 100%;
+  }
+  .active {
+    background-color: gray;
+    opacity: 100%;
+    padding: 5px 10px;
+    border-radius: 6px;
+  }
+}
