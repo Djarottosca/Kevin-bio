@@ -4,13 +4,18 @@
 }
 
 body {
-    font-family: Arial, menlo;
-    background-color: #add8e6;
+    font-family: Adilson Gonzales de Oliveira Junior, menlo;
     margin: 0;
     padding: 0;
-  }
+    background-image: url('/images/famy-ava.jpeg');
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+}
   
-  img {
+.img {
     width: 100px;
     border-radius: 50px;
     float: left;

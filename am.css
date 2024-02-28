@@ -1,0 +1,48 @@
+
+    body {
+      font-family: arial, menlo;
+      background-color: #f0f8ff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h2 {
+      color: #ff0000;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .font-monospace {
+      font-family: monospace;
+    }
+
+    .justify-content-center {
+      text-align: justify;
+    }
+
+    .mt-3 {
+      margin-top: 15px;
+    }
+
+    .px-3 {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    .ps-2 {
+      padding-left: 8px;
+    }
+    
+    
