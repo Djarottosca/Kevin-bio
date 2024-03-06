@@ -21,7 +21,7 @@ body {
   background-size: cover;
 }
 body.home {
-  background-image: url("/images/famy-ava.jpeg");
+  background-image: url("/images/bg-famy.jpg");
 }
 body.contact {
   background-color: azure;
@@ -32,16 +32,20 @@ body.about {
 
 table {
   background-color: transparent;
-
-  td {
-    border-bottom: 1px solid gray;
-    border-top: 1px solid gray;
-  }
+  
   /* coba tambahkan event hover atau active untuk tag dalam table */
   /*
   -
   -
   */
+}
+tr{
+  border: 1px solid black !important;
+}
+td{
+  border: 1px solid black !important;
+  border-bottom: 1px solid gray;
+  border-top: 1px solid gray;
 }
 
 .img {
@@ -86,11 +90,11 @@ p.username {
   gap: 10px;
   padding: 0px 50px;
   margin-top: 5px;
-  a {
-    color: white;
+  a{
+    color: red;
     text-decoration: none;
     opacity: 80%;
-  }
+  };
   a:hover {
     opacity: 100%;
   }
@@ -100,4 +104,48 @@ p.username {
     padding: 5px 10px;
     border-radius: 6px;
   }
+}
+
+.nav-style{
+  color: black;
+  background-color: white;
+  font-family: didot;
+  padding: 7px;
+  border-radius: 10px;
+  a{
+    opacity: 10%;
+  }
+} 
+
+
+.sub-topic{
+  font-size: 16px;
+  font-family: Orkey;
+  p {
+    padding: 35px 70px 50px 90px;
+  }
+  
+}
+
+.tit-tab{
+  font-size: 22px;
+  font-family: Orkey;
+  align-items: center;
+}
+
+.taut{
+  text-decoration: none;
+  }
+  .taut:hover{
+    opacity: 80%;
+    text-decoration: underline;
+  }
+}
+
+
+.ed {
+  text-align: center;
+  font-family: didot;
+  font-size: 16px;
+  
 }
