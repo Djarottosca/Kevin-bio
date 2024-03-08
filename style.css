@@ -14,6 +14,7 @@ body {
   font-family: Helvetica;
   margin: 0;
   padding: 0;
+  padding-bottom: 100px;
   height: 500px;
   background-position: center;
   background-repeat: no-repeat;
@@ -32,12 +33,19 @@ body.about {
 
 table {
   background-color: transparent;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
   
   /* coba tambahkan event hover atau active untuk tag dalam table */
   /*
   -
   -
   */
+}
+
+th{
+  border: 1px solid black !important;
+  text-align: center !important ; 
 }
 tr{
   border: 1px solid black !important;
@@ -81,7 +89,16 @@ p.username {
   }
 }
 
-.nav-wrapper {
+.px-3 {
+  padding-right: 1px;
+  padding-left: 1px;
+  padding-bottom: 1px;
+}
+.mt-3 {
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+/* .nav-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: end;
@@ -104,7 +121,7 @@ p.username {
     padding: 5px 10px;
     border-radius: 6px;
   }
-}
+} 
 
 .nav-style{
   color: black;
@@ -115,8 +132,37 @@ p.username {
   a{
     opacity: 10%;
   }
-} 
+}  */
 
+/* Add a black background color to the top navigation */
+.topnav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  background-color: transparent;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: grey;
+  color: white;
+}
 
 .sub-topic{
   font-size: 16px;
