@@ -35,7 +35,7 @@ table {
   background-color: transparent;
   margin-bottom: 10px;
   padding-bottom: 10px;
-  
+
   /* coba tambahkan event hover atau active untuk tag dalam table */
   /*
   -
@@ -43,14 +43,14 @@ table {
   */
 }
 
-th{
+th {
   border: 1px solid black !important;
-  text-align: center !important ; 
+  text-align: center !important ;
 }
-tr{
+tr {
   border: 1px solid black !important;
 }
-td{
+td {
   border: 1px solid black !important;
   border-bottom: 1px solid gray;
   border-top: 1px solid gray;
@@ -164,34 +164,30 @@ p.username {
   color: white;
 }
 
-.sub-topic{
+.sub-topic {
   font-size: 16px;
   font-family: Orkey;
   p {
     padding: 35px 70px 50px 90px;
   }
-  
 }
 
-.tit-tab{
+.tit-tab {
   font-size: 22px;
   font-family: Orkey;
   align-items: center;
 }
 
-.taut{
+.taut {
   text-decoration: none;
-  }
-  .taut:hover{
-    opacity: 80%;
-    text-decoration: underline;
-  }
 }
-
+.taut:hover {
+  opacity: 80%;
+  text-decoration: underline;
+}
 
 .ed {
   text-align: center;
   font-family: didot;
   font-size: 16px;
-  
 }
