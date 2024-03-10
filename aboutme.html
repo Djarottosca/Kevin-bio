@@ -6,65 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Me</title>
   <script src="https://unpkg.com/feather-icons"></script>
-  <link rel="stylesheet" href="style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-  <style>
-    body {
-      font-family: Arial, menlo;
-      background-color: #f0f8ff;
-      margin: 0;
-      padding: 0;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    h2 {
-      color: #007bff;
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
-
-    p {
-      font-size: 16px;
-      line-height: 1.6;
-      color: #333;
-    }
-
-    .font-monospace {
-      font-family: monospace;
-    }
-
-    .justify-content-center {
-      text-align: justify;
-    }
-
-    .mt-3 {
-      margin-top: 15px;
-    }
-
-    .px-3 {
-      padding-left: 15px;
-      padding-right: 15px;
-    }
-
-    .ps-2 {
-      padding-left: 8px;
-    }
-  </style>
+  <link rel="stylesheet" href="aboutme.css">  
 </head>
 
 <body>
-  <div class="d-flex flex-row-reverse">
-    <div class="p-2"><a href="/Kevin-bio/contact.html">Contact</a></div>
-    <div class="p-2"><a href="/Kevin-bio/aboutme.html">About Me</a></div>
-    <div class="p-2"><a href="/Kevin-bio">Home</a></div>
-  </div>
 
+  <nav class="nav nav-pills d-flex flex-row-reverse">
+    <a class="nav-link" href="contact.html">Contact</a>
+    <a class="nav-link active" aria-current="true" href="aboutme.html">About</a>
+    <a class="nav-link" href="index.html">Home</a>
+  </nav>
   <div class="container mt-3 px-3">
     <h1 id="text-header">About Me</h1>
     <p class="ps-2 font-monospace justify-content-center">
@@ -98,7 +51,7 @@
         <tr>
           <td>01/2020-01/2024</td>
           <td>
-            Asistent Lectures
+            Lecturer Assistant
             <br />
             <span style="color: #808080">Physics study program, Faculty of Science and Technology, Airlangga
               University.</span>
@@ -107,18 +60,20 @@
             <ul type="circle">
               <p align="justify">
                 <li>
-                  Formulated tutorials and material handouts for 9 courses used by >200 students
-                </li>
+                  Formulating tutorials and material handouts for >200 students. 
+                  (Quantum Physics, Electricity and Magnetism, Electricity and Magnetism (Experimental), 
+                  Many body Quantum Mechanics, Nuclear Physics, Atomic and Molecular Computing, 
+                  Atomic and Molecular Physics, Material Computing, Particle Physics).</li>
                 <li>
-                  Guided > 200 students in 10 courses and 40% of them got an A and AB in each subject
-                </li>
+                  Help complete homework, prepare for physics tests (Daily Test, Mid-Semester Exam, 
+                  and Final Semester Exam), and provide motivation and advice in student learning.</li>
                 <li>
                   Supervising 30 daily exams and checking student answer sheets for 6 months of study with a cheating
-                  rate of 0%
+                  rate of 0%.
                 </li>
                 <li>
                   Support the planning of lecture schedules for 2 lecturers in 10 subjects and assist them in some of
-                  their responsibilities
+                  their responsibilities.
                 </li>
               </p>
             </ul>
@@ -177,7 +132,7 @@
               <li>
                 Diagnosed and conclude biodiesel (B40) is able to provide good performance for use as a diesel engine
                 fuel and the resulting gas emissions are smaller than diesel emissions (B40) is suitable for use in all
-                diesel engines
+                diesel engines.
               </li>
             </p>
           </ul>
@@ -202,7 +157,7 @@
                 experienced by the organization.</li>
               <li>
                 Trained soft skills and hard skills to 8 team members who are now stakeholders in the organization.</li>
-              <li>Led the discussion on offline cadre which was attended by >100 general students</li>
+              <li>Led the discussion on offline cadre which was attended by >100 general students.</li>
             </p>
           </ul>
         </td>
@@ -249,6 +204,39 @@
       <tbody>
         <tr>
           <td>1</td>
+          <td>Research Assistant
+            <br />
+            <span style="color: #808080">Research Center for Quantum Engineering Design, Universitas Airlangga.</span>
+            <br>
+            <span style="color: black">1/21–1/24</span>
+          </td>
+          <td class="ps-2 justify-content-center">
+            <ul type="circle">
+              <p align="justify">
+                <li>
+                Designed research and the timeline.
+                </li>
+               <li>
+                Generated density functional theory-based computational model.
+               </li>
+               <li>
+                Performed calculation, analyzed data, and reviewed scientific literature.
+               </li>
+               <li>
+                Composed research reports and presented them to the supervisor.
+               </li>
+              </p>
+            </ul>
+          </td>
+          <td>
+            <li>Quantum ESPRESSO</li>
+            <li>Linux Server</li>
+            <li>Density Functional Theory (DFT)</li>
+            <li>Statistical Data Analysis</li>
+            <li>Gnuplot</li>
+          </td>
+        <tr>
+          <td>2</td>
           <td>Material Computing
             <br />
             <span style="color: #808080">Research Center for Quantum Engineering Design, Universitas Airlangga.</span>
@@ -284,9 +272,83 @@
           </td>
         </tr>
       </tbody>
+    </table>
   </div>
+
+  <!--Ini Organizations-->
+  <div class="mt-3 px-3">
+    <h2>Organization</h2>
+    <table class="table table-hover">
+      <thead>
+        <th>No</th>
+        <th>Position</th>
+        <th>Description</th>
+        <th>Skills</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Himpunan Mahasiswa Fisika (HIMAFI) Universitas Airlangga
+            <br />
+            <span style="color: #808080">Head of Cadre for Human Resource Development.</span>
+            <br>
+            <span style="color: black">1/20–1/21</span>
+          </td>
+          <td class="ps-2 justify-content-center">
+            <ul type="circle">
+              <p align="justify">
+                <li>
+                  Person in Charge of Pemaba (2020).
+                </li>
+                <li>
+                  Head Steering Comittee of Pemaba (2020).
+                </li>
+                <li>
+                  Coordinator Evaluation Staff of Pemaba (2020).
+                </li>
+              </p>
+            </ul>
+          </td>
+          <td>
+            <li>Critial and Analytical Thinking </li>
+            <li>Databases</li>
+          </td>
+        </tr>
+        <td>2</td>
+          <td>Himpunan Mahasiswa Fisika (HIMAFI) Universitas Airlangga
+            <br />
+            <span style="color: #808080">Staff of Human Resources Development.</span>
+            <br>
+            <span style="color: black">1/19–1/20</span>
+          </td>
+          <td class="ps-2 justify-content-center">
+            <ul type="circle">
+              <p align="justify">
+                <li>
+                  Person in charge of Himafi Internship (2019).
+                </li>
+                <li>
+                  Staff event organizer of Pemaba (2019).
+                </li>
+              </p>
+            </ul>
+          </td>
+          <td>
+            <li>Critial and Analytical Thinking </li>
+            <li>Databases</li>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+  crossorigin="anonymous"></script>
+<script>
+  feather.replace();
+</script>
 </body>
 
 </html>
