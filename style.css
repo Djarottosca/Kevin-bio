@@ -22,7 +22,7 @@ body {
   background-size: cover;
 }
 body.home {
-  background-image: url("/images/bg-famy.jpg");
+  background-image: url("/kevin-bio/images/bg-famy.jpg");
 }
 body.contact {
   background-color: azure;
