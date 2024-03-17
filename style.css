@@ -1,28 +1,3 @@
-<<<<<<< HEAD
-#text-header:hover{
-    color: brown;
-    cursor: pointer;
-}
-
-body {
-    font-family: Arial, menlo;
-    background-color: #add8e6;
-    margin: 0;
-    padding: 0;
-  }
-  
-  img {
-    width: 100px;
-    border-radius: 50px;
-    float: left;
-    margin-right: 10px;
-  }
-  
-  p.username {
-    font-weight: bold;
-  }
-  
-=======
 #text-header:hover {
   color: brown;
   cursor: pointer;
@@ -102,16 +77,16 @@ p.username {
 .links-wrapper {
   background-color: bisque;
   padding: 5px 0px;
+}
 
-  a {
-    color: black;
-    text-decoration: none;
-    font-weight: 400px;
-    font-family: monospace;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
+.links-wrapper a {
+  color: black;
+  text-decoration: none;
+  font-weight: 400px;
+  font-family: monospace;
+}
+.links-wrapper a:hover {
+  text-decoration: underline;
 }
 
 .px-3 {
@@ -192,9 +167,10 @@ p.username {
 .sub-topic {
   font-size: 16px;
   font-family: Orkey;
-  p {
-    padding: 35px 70px 50px 90px;
-  }
+}
+
+.sub-topic p {
+  padding: 35px 70px 50px 90px;
 }
 
 .tit-tab {
@@ -216,4 +192,11 @@ p.username {
   font-family: didot;
   font-size: 16px;
 }
->>>>>>> baa8797b15dc7efa8e6e7651dda57b42db17a12b
+
+.image-profile {
+  max-height: 50vh;
+  /* border: 1px solid; */
+  border-radius: 50%;
+  /* width: 50px;
+  height: 50px; */
+}
