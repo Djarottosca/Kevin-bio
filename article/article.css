@@ -105,8 +105,15 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  color: #333;
 }
-
+.urel {
+  text-decoration: none;
+}
+.urel:hover {
+  opacity: 80%;
+  text-decoration: underline;
+}
 /* Add a black background color to the top navigation */
 .topnav {
   display: flex;
@@ -135,4 +142,21 @@ p {
 .topnav a.active {
   background-color: grey;
   color: white;
+}
+a.urel {
+  padding-right: 25px;
+  padding-left: 25px;
+  text-decoration: none;
+  color: black;
+  border-radius: 20px;
+}
+
+a.active {
+  background-color: grey;
+  color: white;
+}
+
+a.urel:hover {
+  text-decoration: underline;
+  opacity: 30%;
 }

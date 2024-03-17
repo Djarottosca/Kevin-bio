@@ -1,21 +1,31 @@
 <div class="d-flex flex-column">
-    <a id='0' class="home" href="/kevin-bio/article/home-article.html">Article</a>
-    <a id="1" href="/kevin-bio/article/rudolf-diesel.html">Rudold Diesel</a>
-    <a id="2" href="/kevin-bio/article/diesel-engine.html">Diesel Engines</a>
-    <a id="3" href="/kevin-bio/article/pet-vs-dis.html">Petrol vs Diesel</a>
-    <a id="4" href="/kevin-bio/article/felix-wankel.html">Who's Felix Wankel?</a>
-    <a id="5" href="/kevin-bio/article/rotary-engines.html">Rotary Engines</a>
+  <a id="0" class="urel" href="/kevin-bio/article/home-article.html">Article</a>
+  <a id="1" class="urel" href="/kevin-bio/article/rudolf-diesel.html"
+    >Rudold Diesel</a
+  >
+  <a id="2" class="urel" href="/kevin-bio/article/diesel-engine.html"
+    >Diesel Engines</a
+  >
+  <a id="3" class="urel" href="/kevin-bio/article/pet-vs-dis.html"
+    >Petrol vs Diesel</a
+  >
+  <a id="4" class="urel" href="/kevin-bio/article/felix-wankel.html"
+    >Who's Felix Wankel?</a
+  >
+  <a id="5" class="urel" href="/kevin-bio/article/rotary-engines.html"
+    >Rotary Engines</a
+  >
 </div>
 <script>
-    $(function () {
-        const currentPage = window.location.pathname.split('article/')[1]
-        const getAllLink = document.querySelectorAll('a');
-        let currentIndex;
-        getAllLink.forEach((item, index) => {
-            if (item.href.split('article/')[1] == currentPage) {
-                currentIndex = index - 4
-            }
-        })
-        $(`#${currentIndex}`).addClass('active')
-    })
+  $(function () {
+    const currentPage = window.location.pathname.split("article/")[1];
+    const getAllLink = document.querySelectorAll("a");
+    let currentIndex;
+    getAllLink.forEach((item, index) => {
+      if (item.href.split("article/")[1] == currentPage) {
+        currentIndex = index - 4;
+      }
+    });
+    $(`#${currentIndex}`).addClass("active");
+  });
 </script>
