@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What's DFT?</title>
+    <link rel="stylesheet" href="/kevin-bio/article/article.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="topnav">
+      <a class="nav-style" href="/kevin-bio/index.html">Home</a>
+      <a class="nav-style" href="/kevin-bio/aboutme.html">About</a>
+      <a class="nav-style" href="/kevin-bio/contact.html">Contact</a>
+      <a class="nav-style active" href="/kevin-bio/article/home-article.html"
+        >Article</a
+      >
+    </div>
+    <!--Ini Judul-->
+    <div class="container d-flex flex-row align-items-start">
+      <div class="container mt-3 px-3 col-9" style="text-align: justify">
+        <h1 id="text-header">What's Density Functional Theory?</h1>
+        <p class="ps-2 justify-content-center"></p>
+        <p>
+          There are many fields within the physical sciences and engineering
+          where the key to scientific and technological progress is
+          understanding and controlling the properties of matter at the level of
+          individual atoms and molecules. Density functional theory is a
+          phenomenally successful approach to finding solutions to the
+          fundamental equation that describes the quantum behavior of atoms and
+          molecules, the Sch&ouml;rdinger equation, in settings of practical
+          value. This approach has rapidly grown from being a specialized art
+          practiced by a small number of physicists and chemists at the cutting
+          edge of quantum mechanical theory to a tool that is used regularly by
+          large numbers of researchers in chemistry, physics, materials science,
+          chemical engineering, geology, and other disciplines. A search of the
+          Science Citation Index for articles published in 1986 with the words
+          “density functional theory” in the title or abstract yields less than
+          50 entries. Repeating this search for 1996 and 2006 gives more than
+          1100 and 5600 entries, respectively.
+        </p>
+        <p>
+          The aim of this book is to provide just what the title says: an
+          introduction to using density functional theory (DFT) calculations in
+          a practical context. It is designed under the premise that the reader
+          may lack prior experience or a comprehensive understanding of these
+          calculations. Instead, it assumes a reader who harbors an interest in
+          exploring the potential applications of such methods. Whether the aim
+          is to independently conduct calculations in a research setting or to
+          engage proficiently with collaborators employing these methods, this
+          book endeavors to impart the requisite knowledge and skills.
+        </p>
+        <p>
+          An analogy related to cars may be useful here. Before you learned how
+          to drive, it was presumably clear to you that you can accomplish many
+          useful things with the aid of a car. For you to use a car, it is
+          important to understand the basic concepts that control cars (you need
+          to put fuel in the car regularly, you need to follow basic traffic
+          laws, etc.) and spend time actually driving a car in a variety of road
+          conditions. You do not, however, need to know every detail of how fuel
+          injectors work, how to construct a radiator system that efficiently
+          cools an engine, or any of the other myriad of details that are
+          required if you were going to actually build a car. Many of these
+          details may be important if you plan on undertaking some especially
+          difficult car-related project such as, say, driving yourself across
+          Antarctica, but you can make it across town to a friend’s house and
+          back without understanding them.
+        </p>
+        <p>
+          With this book, I was able to learn to "drive across town" when
+          performing calculations with the DFT package or when interpreting
+          others' calculations dealing with physical questions of interest to
+          me. I am interested in “building a better car” by advancing the
+          cutting edge of method development in this area.
+        </p>
+        <p>
+          Reference:
+          <br />
+          David S. Sholl and Janice A. Steckel.
+          <em>Density functional theory. A Practical Introduction</em>. John
+          Wiley and Sons, 2009. isbn: 978-0-470-37317-0.
+        </p>
+        <p></p>
+      </div>
+      <div id="article-nav"></div>
+    </div>
+    <script>
+      $(function () {
+        $("#article-nav").load("/kevin-bio/article/article-nav.html");
+      });
+    </script>
+  </body>
+</html>

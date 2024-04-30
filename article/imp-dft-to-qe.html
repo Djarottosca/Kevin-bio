@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Implementation of DFT into Quantum ESPRESSO</title>
+    <link rel="stylesheet" href="/kevin-bio/article/article.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="topnav">
+      <a class="nav-style" href="/kevin-bio/index.html">Home</a>
+      <a class="nav-style" href="/kevin-bio/aboutme.html">About</a>
+      <a class="nav-style" href="/kevin-bio/contact.html">Contact</a>
+      <a class="nav-style active" href="/kevin-bio/article/home-article.html"
+        >Article</a
+      >
+    </div>
+    <!--Ini Judul-->
+    <div class="container d-flex flex-row align-items-start">
+      <div class="container mt-3 px-3 col-9" style="text-align: justify">
+        <h1 id="text-header">
+          Implementation of DFT into <code>Quantum ESPRESSO</code>
+        </h1>
+        <p class="ps-2 justify-content-center"></p>
+        <p>
+          <strong><em>Density Functional Theory</em></strong> (DFT), the entire
+          field of density functional theory rests on two fundamental
+          mathematical theorem proved by Kohn and Hohenberg and the derivation
+          of a set of equation by Kohn and Sham in the mid-1960s.
+        </p>
+        <p>
+          <strong>The first theorem</strong>, proven by Hohenberg and Kohn,
+          states:
+          <em
+            >The ground-state energy of the Schr&ouml;dinger equation is a
+            unique function of the electron density.</em
+          >
+        </p>
+
+        <p>
+          This theorem establishes a one-to-one correspondence between the
+          ground-state wave function and the electron density of the ground
+          state. To understand this, first, we must know what such a "function"
+          is. A function takes values from a variable and defines a single value
+          of that variable. A simple example of a function dependent on a single
+          variable is
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <mrow class="MJX-TeXAtom-ORD">
+              <mi>f</mi>
+              <mo stretchy="false">(</mo>
+              <mi>x</mi>
+              <mo stretchy="false">)</mo>
+            </mrow>
+            <mo>=</mo>
+            <msup>
+              <mi>x</mi>
+              <mn>3</mn>
+            </msup>
+            <mo>+</mo>
+            <mn>1</mn>
+          </math>
+          . Functionals require another function and define a single value of a
+          function, for example,
+        </p>
+        <center>
+          <p>
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi>F</mi>
+                <mo stretchy="false">[</mo>
+                <mi>f</mi>
+                <mo stretchy="false">]</mo>
+              </mrow>
+              <mo>=</mo>
+              <msubsup>
+                <mo>&#x222B;<!-- ∫ --></mo>
+                <mrow class="MJX-TeXAtom-ORD">
+                  <mo>&#x2212;<!-- − --></mo>
+                  <mn>1</mn>
+                </mrow>
+                <mrow class="MJX-TeXAtom-ORD">
+                  <mn>1</mn>
+                </mrow>
+              </msubsup>
+              <mi>f</mi>
+              <mo stretchy="false">(</mo>
+              <mi>x</mi>
+              <mo stretchy="false">)</mo>
+              <mi>d</mi>
+              <mi>x</mi>
+            </math>
+          </p>
+        </center>
+        <p>
+          It is a functional of the function <i>f(x)</i>. If we calculate this
+          function using <span>x<sup>3</sup> + 1</span>, we get
+          <span>F[f] = 2</span>. So, we can redefine the result by expressing
+          the energy of the ground state <i>E</i> as
+          <span>E[n(<b>r</b>)]</span>, where <span>n(<b>r</b>)</span> is the
+          electron density.
+        </p>
+
+        <p>
+          Another way to explain the results of Hohenberg and Kohn's is that the
+          electron density in the ground state can uniquely explain all
+          characteristics, including energy and wave function, of the ground
+          state. This result is important because we can think of solving the
+          Schr&ouml;dinger equation by seeking a function using three spatial
+          variables. electron density, rather than a function of 3N variables of
+          wave functions. However, from the explanation of this theorem, it
+          cannot yet explain the wave function. To explain the wave function
+          using the theorem mentioned by Hohenberg-Kohn.
+        </p>
+
+        <p>
+          <strong> The second theorem</strong> defines an important property of
+          the functional:
+          <em
+            >The electron density that minimizes the energy of the overall
+            functional is the true electron density corresponding to the full
+            solution of the Schr&ouml;dinger equation</em
+          >. If the ”true” functional form were known, the electron density
+          could be varied until the energy from the functional is minimized,
+          giving a prescription for finding the relevant electron density. This
+          variational principle is used in practice with approximate forms of
+          the functional.
+        </p>
+        <p>
+          A useful way to write down the functional described by the Hohenberg-
+          Kohn theorem is in term of the single-electron wave function,
+          &psi;<sub>i</sub>(<i>r</i>). The energy functional can be write as
+        </p>
+        <center>
+          <p>
+            E[&psi;<sub>i</sub>] = E<sub>known</sub>[&psi;<sub>i</sub>] +
+            E<sub>XC</sub>[&psi;<sub>i</sub>]
+          </p>
+        </center>
+
+        <p>
+          Where we have split the functional into a collection of terms we can
+          write down in a simple analytical form,
+          <em>E<sub>known</sub>[&psi;<sub>i</sub>]</em>, and everything else,
+          <em>E<sub>XC</sub></em
+          >. The "known" term includes four contributions:
+        </p>
+        <center>
+          <p>
+            <span>
+              \( E_{\text{known}}[\psi_{i}] = \frac{\hbar^2}{m} \sum_{i} \int
+              \psi_{i}^{\star}\nabla^2\psi_{i} \, d^3r + \int
+              V(\mathbf{r})n(\mathbf{r}) \, d^3r <br />
+              + \iint \frac{n(\mathbf{r})n(\mathbf{r}^{\prime})}{|\mathbf{r} -
+              \mathbf{r}^{\prime}|} \, d^3r \, d^3r^{\prime} + E_{\text{ion}} \)
+            </span>
+          </p>
+        </center>
+        <p>
+          The terms on the right are, in order, the electron kinetic energies,
+          the Coulomb interaction between the electron and the nuclei, the
+          Coulomb interactions between pairs of the electrons, and the Coulomb
+          interaction between pairs of nuclei. The other term in the complete
+          energy functional, E<sub>XC</sub>[&psi;<sub>i</sub>], is the
+          exchange-correlation functional, and it is defined to include all the
+          quantum mechanical effects that are not included in the ”known” terms.
+        </p>
+
+        <p>
+          \[ \left[-\frac{\hbar^2}{2m}\nabla^2 + V(\mathbf{r}) +
+          V_{H}(\mathbf{r})+ V_{XC}(\mathbf{r})\right]\psi_{i}(\mathbf{r}) =
+          \varepsilon_{i}\psi_{i}(\mathbf{r}) \]
+        </p>
+        <p>
+          These equations are superficially similar to Equation. The main
+          difference is that the Kohn-Sham equations are missing the summations
+          that appear inside the full Schr&ouml;dinger equation (Equation). This
+          is because the solution of the Kohn-Sham equations are single-electron
+          wave function that depend on only three spatial variables,
+          \(\psi_i(\mathbf{r})\). On the left-hand side of the Kohn-Sham
+          equations there are three potentials, V, V<span><sub>H</sub></span>
+          dan V<span><sub>XC</sub></span
+          >. The first of these alse appeared in the full Schr&ouml;dinger
+          equation and in the ”known” part of the total energy functional given
+          in Equation. This potential defines the interaction between an
+          electron and the collection of atomic nuclei. The second is called the
+          Hartree potential and is defined by
+        </p>
+        <center>
+          <p>
+            <span>
+              \( V_{H}(\mathbf{r}) = e^{2} \int
+              \frac{n(\mathbf{r}^{\prime})}{|\mathbf{r} \mathbf{r}^{\prime}|}
+              d^{3} \mathbf{r}^{\prime} \)
+            </span>
+          </p>
+        </center>
+        <p>
+          This potential describes the Coulomb repulsion between the electron
+          being considered in one of the Kohn-Sham equations and the total
+          electron density defined by all electrons in the problem. The Hartree
+          potential includes a so-called self-interaction contribution because
+          the electron is also part of the total electron density, so part of
+          V<span><sub>H</sub></span> involves a Coulomb interaction between the
+          electron and itself. The self-interaction is unphysical, and the
+          correction for it is one of several effects that are lumped together
+          into the final potential in the Kohn-Sham equations, V<span
+            ><sub>XC</sub></span
+          >, which defines exchange and correlation contributions to the
+          single-electron equations. V<span><sub>XC</sub></span> can formally be
+          defined as a ”functional derivative” of the exchange-correlation
+          energy:
+        </p>
+        <center>
+          <p>
+            <span>
+              \( V_{XC}(\mathbf{r}) = \frac{\delta E_{XC}}{\delta
+              \rho(\mathbf{r})} \)
+            </span>
+          </p>
+        </center>
+
+        <p>
+          The functional derivative is written using &delta; rather than d to
+          emphasize that it's not quite identical to a normal derivative.
+        </p>
+
+        <p>
+          <strong> The phenomena in this study</strong> are processed using a
+          programme that has implemented the DFT method. Quantum ESPRESSO
+          (opEn-Source Package for Research in Electronic Structure, Simulation,
+          and Optimisation) is a program (software) that specifically calculates
+          periodic systems. In my thesis, I calculated using DFT with Quantum
+          ESPRESSO software. DFT calculation using Quantum ESPRESSO requires a
+          basis set (BC) and exchange correlation (XC). The basis set and
+          exchange correlation used are Plane-Wave (PW) and pseudopotential (PP)
+          respectively with the Perdew-Burke-Ernzerhof (PBE) method.
+        </p>
+
+        <p>
+          <strong>The implementation of DFT</strong> in
+          <code>Quantum ESPRESSO</code> has been extensively utilized in the
+          field of computation. The implementation entails the following:
+        </p>
+
+        <ol>
+          <li><p>Ground state calculations</p></li>
+          <li>
+            <p>
+              Structure optimization, molecular dynamics, surface and bulk
+              potential energy
+            </p>
+          </li>
+          <li><p>Electrochemistry</p></li>
+          <li><p>Spectroscopy</p></li>
+          <li><p>Quantum transport</p></li>
+        </ol>
+
+        <p>
+          <strong> The ground state calculations </strong> performed by
+          <code>Quantum ESPRESSO</code> encompass total energy, forces,
+          stresses, and Kohn-Sham orbitals. Structural optimization, molecular
+          dynamics, and potential energy studies involve investigating the
+          dynamics of molecules. One of these is the Born-Oppenheimer molecular
+          dynamics (PWscf package). In Quantum ESPRESSO, the package utilized
+          for computations in this final project is the
+          <em>Plane-Wave Self-Consistent Field</em> (PWscf) with the command
+          <code>pw.x</code>. The <code>pw.x</code> command requires additional
+          information, namely <em>pseudopotentials</em> (PP) for each type of
+          atom in the calculation. <em>The pseudopotentials used</em> in this
+          final project are obtained from
+          <a
+            href="http://www.quantum-espresso.org/pseudopotentials"
+            class="refence"
+            >here</a
+          >
+          as follows:
+        </p>
+        <ol>
+          <li><p>Cu (Copper) Cu.pbe-spn-kjpaw psl.1.0.0.UPF</p></li>
+          <li><p>Pd (Palladium) Pd.pbe-spn-kjpaw psl.1.0.0.UPF</p></li>
+        </ol>
+      </div>
+      <div id="article-nav"></div>
+    </div>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+    <script>
+      $(function () {
+        $("#article-nav").load("/kevin-bio/article/article-nav.html");
+      });
+    </script>
+    <!-- <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script> -->
+  </body>
+</html>

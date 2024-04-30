@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nama website</title>
+    <link rel="stylesheet" href="/kevin-bio/article/article.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="topnav">
+      <a class="nav-style" href="/kevin-bio/index.html">Home</a>
+      <a class="nav-style" href="/kevin-bio/aboutme.html">About</a>
+      <a class="nav-style" href="/kevin-bio/contact.html">Contact</a>
+      <a class="nav-style active" href="/kevin-bio/article/home-article.html"
+        >Article</a
+      >
+    </div>
+    <!--Ini Judul-->
+    <div class="container d-flex flex-row align-items-start">
+      <div class="container mt-3 px-3 col-9" style="text-align: justify">
+        <h1 id="text-header"><code>Quantum ESPRESSO</code></h1>
+        <p class="ps-2 justify-content-center"></p>
+        <p>
+          <code>Quantum ESPRESSO</code> is a suite for first-principles
+          electronic-structure calculations and materials modeling, distributed
+          for free and as free software under the GNU General Public License. It
+          is based on density-functional theory, plane wave basis sets, and
+          pseudopotentials (both norm-conserving and ultrasoft). ESPRESSO is an
+          acronym for opEn-Source Package for Research in Electronic Structure,
+          Simulation, and Optimization.
+        </p>
+
+        <p>
+          The core plane wave DFT functions of QE are provided by the PWscf
+          component (PWscf previously existed as an independent project). PWscf
+          (Plane-Wave Self-Consistent Field) is a set of programs for electronic
+          structure calculations within density functional theory and density
+          functional perturbation theory, using plane wave basis sets and
+          pseudopotentials. The software is released under the GNU General
+          Public License. It is designed to be used in the field of condensed
+          matter physics, and it is able to perform simulations of systems made
+          up of thousands of atoms.
+        </p>
+        <p>
+          Quantum Espresso is a software suite for electronic structure
+          calculations and materials modeling, used in the field of
+          computational materials science. It is a highly advanced tool, capable
+          of performing various types of calculations, including density
+          functional theory (DFT) simulations, molecular dynamics, and
+          self-consistent field (SCF) calculations.
+        </p>
+        <p>
+          Learning Quantum Espresso can be a challenging task, as it requires a
+          strong background in materials science, quantum mechanics, and
+          computational methods. Becoming proficient in its use may require a
+          significant investment of time and effort, and is likely not feasible
+          to accomplish in a short time frame.
+        </p>
+        <p>
+          However, having a background in this field, I was able to start using
+          Quantum Espresso relatively quickly, as the software provides a wide
+          range of resources and tutorials, including user manuals, online
+          forums, and example input files. These resources can be used to
+          quickly get up to speed with the basic functionality of the software,
+          although it will still take time and practice to become an expert
+          user.
+        </p>
+        <p>
+          Learning and using Quantum Espresso can require a significant
+          investment in time and effort. It is a complex software package that
+          requires a strong background in physics, materials science, and
+          computer science. Understanding the underlying theory and mathematical
+          concepts is necessary for effectively using Quantum Espresso.
+          Additionally, the software has a steep learning curve and requires a
+          lot of computational resources.
+        </p>
+      </div>
+
+      <!-- <div class="container sidebar col-3">
+      <a href="/kevin-bio/article/home-article.html">Article</a>
+      <a href="/kevin-bio/article/rudolf-diesel.html">Rudold Diesel</a>
+      <a href="/kevin-bio/article/diesel-engine.html">Diesel Engines</a>
+      <a class="active" href="/kevin-bio/article/pet-vs-dis.html">Petrol vs Diesel</a>
+    </div> -->
+      <div id="article-nav"></div>
+    </div>
+    <script>
+      $(function () {
+        $("#article-nav").load("/kevin-bio/article/article-nav.html");
+      });
+    </script>
+  </body>
+</html>
