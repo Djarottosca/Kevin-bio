@@ -44,18 +44,17 @@
         <p>
           <strong><em>Density Functional Theory</em></strong> (DFT), the entire
           field of density functional theory rests on two fundamental
-          mathematical theorem proved by Kohn and Hohenberg and the derivation
-          of a set of equation by Kohn and Sham in the mid-1960s.
+          mathematical theorems proved by Kohn and Hohenberg and the derivation
+          of a set of equations by Kohn and Sham in the mid-1960s.
         </p>
         <p>
           <strong>The first theorem</strong>, proven by Hohenberg and Kohn,
           states:
           <em
-            >The ground-state energy of the Schr&ouml;dinger equation is a
-            unique function of the electron density.</em
+            >The ground-state energy of the Schrödinger equation is a unique
+            function of the electron density.</em
           >
         </p>
-
         <p>
           This theorem establishes a one-to-one correspondence between the
           ground-state wave function and the electron density of the ground
@@ -118,26 +117,24 @@
           <span>E[n(<b>r</b>)]</span>, where <span>n(<b>r</b>)</span> is the
           electron density.
         </p>
-
         <p>
-          Another way to explain the results of Hohenberg and Kohn's is that the
-          electron density in the ground state can uniquely explain all
+          Another way to explain the results of Hohenberg and Kohn's theorem is
+          that the electron density in the ground state can uniquely explain all
           characteristics, including energy and wave function, of the ground
           state. This result is important because we can think of solving the
-          Schr&ouml;dinger equation by seeking a function using three spatial
-          variables. electron density, rather than a function of 3N variables of
-          wave functions. However, from the explanation of this theorem, it
+          Schrödinger equation by seeking a function using three spatial
+          variables for electron density, rather than a function of 3N variables
+          for wave functions. However, from the explanation of this theorem, it
           cannot yet explain the wave function. To explain the wave function
-          using the theorem mentioned by Hohenberg-Kohn.
+          using the theorem mentioned by Hohenberg-Kohn:
         </p>
-
         <p>
-          <strong> The second theorem</strong> defines an important property of
+          <strong>The second theorem</strong> defines an important property of
           the functional:
           <em
             >The electron density that minimizes the energy of the overall
             functional is the true electron density corresponding to the full
-            solution of the Schr&ouml;dinger equation</em
+            solution of the Schrödinger equation</em
           >. If the ”true” functional form were known, the electron density
           could be varied until the energy from the functional is minimized,
           giving a prescription for finding the relevant electron density. This
@@ -146,8 +143,8 @@
         </p>
         <p>
           A useful way to write down the functional described by the Hohenberg-
-          Kohn theorem is in term of the single-electron wave function,
-          &psi;<sub>i</sub>(<i>r</i>). The energy functional can be write as
+          Kohn theorem is in terms of the single-electron wave function,
+          &psi;<sub>i</sub>(<i>r</i>). The energy functional can be written as
         </p>
         <center>
           <p>
@@ -155,7 +152,6 @@
             E<sub>XC</sub>[&psi;<sub>i</sub>]
           </p>
         </center>
-
         <p>
           Where we have split the functional into a collection of terms we can
           write down in a simple analytical form,
@@ -177,13 +173,12 @@
         <p>
           The terms on the right are, in order, the electron kinetic energies,
           the Coulomb interaction between the electron and the nuclei, the
-          Coulomb interactions between pairs of the electrons, and the Coulomb
+          Coulomb interactions between pairs of electrons, and the Coulomb
           interaction between pairs of nuclei. The other term in the complete
           energy functional, E<sub>XC</sub>[&psi;<sub>i</sub>], is the
           exchange-correlation functional, and it is defined to include all the
           quantum mechanical effects that are not included in the ”known” terms.
         </p>
-
         <p>
           \[ \left[-\frac{\hbar^2}{2m}\nabla^2 + V(\mathbf{r}) +
           V_{H}(\mathbf{r})+ V_{XC}(\mathbf{r})\right]\psi_{i}(\mathbf{r}) =
@@ -237,12 +232,10 @@
             </span>
           </p>
         </center>
-
         <p>
           The functional derivative is written using &delta; rather than d to
           emphasize that it's not quite identical to a normal derivative.
         </p>
-
         <p>
           <strong> The phenomena in this study</strong> are processed using a
           programme that has implemented the DFT method. Quantum ESPRESSO
@@ -254,13 +247,11 @@
           exchange correlation used are Plane-Wave (PW) and pseudopotential (PP)
           respectively with the Perdew-Burke-Ernzerhof (PBE) method.
         </p>
-
         <p>
           <strong>The implementation of DFT</strong> in
           <code>Quantum ESPRESSO</code> has been extensively utilized in the
           field of computation. The implementation entails the following:
         </p>
-
         <ol>
           <li><p>Ground state calculations</p></li>
           <li>
@@ -273,32 +264,26 @@
           <li><p>Spectroscopy</p></li>
           <li><p>Quantum transport</p></li>
         </ol>
-
         <p>
-          <strong> The ground state calculations </strong> performed by
+          <strong>Ground state calculations</strong> performed by
           <code>Quantum ESPRESSO</code> encompass total energy, forces,
           stresses, and Kohn-Sham orbitals. Structural optimization, molecular
           dynamics, and potential energy studies involve investigating the
-          dynamics of molecules. One of these is the Born-Oppenheimer molecular
-          dynamics (PWscf package). In Quantum ESPRESSO, the package utilized
-          for computations in this final project is the
+          dynamics of molecules. One of these methods is Born-Oppenheimer
+          molecular dynamics (PWscf package). In Quantum ESPRESSO, the package
+          utilized for computations in this final project is the
           <em>Plane-Wave Self-Consistent Field</em> (PWscf) with the command
           <code>pw.x</code>. The <code>pw.x</code> command requires additional
           information, namely <em>pseudopotentials</em> (PP) for each type of
-          atom in the calculation. <em>The pseudopotentials used</em> in this
+          atom in the calculation. The <em>pseudopotentials</em> used in this
           final project are obtained from
-          <a
-            href="http://www.quantum-espresso.org/pseudopotentials"
-            class="refence"
-            >here</a
-          >
-          as follows:
         </p>
         <ol>
           <li><p>Cu (Copper) Cu.pbe-spn-kjpaw psl.1.0.0.UPF</p></li>
           <li><p>Pd (Palladium) Pd.pbe-spn-kjpaw psl.1.0.0.UPF</p></li>
         </ol>
       </div>
+
       <div id="article-nav"></div>
     </div>
     <script
