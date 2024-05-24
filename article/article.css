@@ -180,3 +180,48 @@ a.refence {
   border-radius: 10px;
   font-size: 18px;
 }
+
+.pic-artic {
+  width: 500px;
+  border-radius: 75px;
+  align: center;
+  position: relative;
+  margin: 0 auto;
+  display: block;
+}
+
+.pic-dis-eng {
+  width: 500px;
+  border-radius: 40px;
+  align: center;
+  position: relative;
+  margin: 0 auto;
+  display: block;
+}
+
+.rud-pict {
+  width: 350px;
+  border-radius: 40px;
+  align: center;
+  position: relative;
+  margin: 0 auto;
+  display: block;
+}
+
+.rot-pict {
+  width: 400px;
+  border-radius: 50px;
+  align: center;
+  position: relative;
+  margin: 0 auto;
+  display: block;
+}
+
+/* .ic-ec-pict {
+  width: 100px;
+  border-radius: 75px;
+  align: center;
+  position: relative;
+  margin: 0 auto;
+  display: block;
+} */
